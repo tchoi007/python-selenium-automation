@@ -1,17 +1,22 @@
 from selenium.webdriver.common.by import By
+
 from behave import given, when, then
 from time import sleep
 
+
+
 #@given('Open target main page')
 #def open_main_page(context):
-#    context.driver.get("https://www.target.com/")
+#    context.app.Main_page.open_main()
 
-#@when('User clicks Cart icon')
-#def click_cart_icon(context):
-#    context.driver.find_element(By.CSS_SELECTOR, "[data-test='@web/CartLink']").click()
+@when('User clicks Cart icn')
+def click_cart_icn(context):
+    context.app.header.click_cart_btn()
 #    sleep(5)
-#@then('Cart shows empty')
-#def check_cart_empty(context):
+@then('Cart shows empty')
+def check_cart_empty(context):
+    context.app.Cart_page.verify_empty_cart("Your cart is empty")
+
 #    actual_text = context.driver.find_element(By.CSS_SELECTOR, "h1[class*='styles_ndsHeading']").text
 #    assert 'Your cart is empty' in actual_text
 
