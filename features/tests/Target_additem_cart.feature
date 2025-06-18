@@ -6,5 +6,5 @@ Feature: Target Cart test
     And click product title
     And click add to cart
     And click close
-    And User clicks Cart icon
+    And User clicks Cart icn
     Then verify 1 item in cart

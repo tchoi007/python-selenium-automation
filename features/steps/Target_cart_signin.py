@@ -12,7 +12,7 @@ from time import sleep
 @when('User clicks Cart icn')
 def click_cart_icn(context):
     context.app.header.click_cart_btn()
-#    sleep(5)
+
 @then('Cart shows empty')
 def check_cart_empty(context):
     context.app.Cart_page.verify_empty_cart("Your cart is empty")
