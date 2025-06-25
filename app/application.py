@@ -5,7 +5,7 @@ from pages.Sign_in_page import Signin
 from pages.header import Header
 from pages.Search_results_page import Searchresults
 from pages.terms_and_conditions_page import TermsConditionPage
-
+from pages.target_help_page import TargetHelpPage
 
 class Application:
     def __init__(self, driver):
@@ -16,3 +16,4 @@ class Application:
         self.Cart_page = CartPage(driver)
         self.Sign_in_page = Signin(driver)
         self.terms_and_conditions_page = TermsConditionPage(driver)
+        self.target_help_page = TargetHelpPage(driver)

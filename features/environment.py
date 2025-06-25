@@ -13,26 +13,26 @@ def browser_init(context, scenario_name):
     """
     driver_path = ChromeDriverManager().install()
     service = Service(driver_path)
-    #context.driver = webdriver.Chrome(service=service)
+    context.driver = webdriver.Chrome(service=service)
 
-    ### BROWSERSTACK ###
-    #Register for BrowserStack, then grab it from https://www.browserstack.com/accounts/settings
-    bs_user ='tomas_1aqxVc'
-    bs_key = 'THbkesv3A4a47JA2HpxE'
-    url = f'http://{bs_user}:{bs_key}@hub-cloud.browserstack.com/wd/hub'
-
-    options = Options()
-    bstack_options = {
-         "os" : "Windows",
-         "osVersion" : "11",
-         'browserName': 'Chrome',
-         'sessionName': scenario_name,
-    }
-    options.set_capability('bstack:options', bstack_options)
-    context.driver = webdriver.Remote(command_executor=url, options=options)
-
-
-
+    # ### BROWSERSTACK ###
+    # #Register for BrowserStack, then grab it from https://www.browserstack.com/accounts/settings
+    # bs_user ='tomas_1aqxVc'
+    # bs_key = 'THbkesv3A4a47JA2HpxE'
+    # url = f'http://{bs_user}:{bs_key}@hub-cloud.browserstack.com/wd/hub'
+    #
+    # options = Options()
+    # bstack_options = {
+    #      "os" : "Windows",
+    #      "osVersion" : "11",
+    #      'browserName': 'Chrome',
+    #      'sessionName': scenario_name,
+    # }
+    # options.set_capability('bstack:options', bstack_options)
+    # context.driver = webdriver.Remote(command_executor=url, options=options)
+    #
+    #
+    #
     context.driver.maximize_window()
     context.driver.implicitly_wait(4)
     context.driver.wait = WebDriverWait(context.driver, timeout =10)
